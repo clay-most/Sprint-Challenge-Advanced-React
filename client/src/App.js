@@ -1,12 +1,23 @@
 import React from 'react';
+import List from "./component/List"
+import useDarkMode from './hooks/useDarkMode'
 import './App.css';
 
-function App() {
+const Navbar = () => {
+  const [darkMode,setDarkMode]=useDarkMode(false)
+  const toggleMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
   return (
-    <div className="App">I'm an App
-    </div>
+      <div>
+        <div
+          onClick={toggleMode}
+          className={darkMode ? 'toggle toggled' : 'toggle'}
+        >DarkMode</div>
+        <List></List>
+      </div>
   );
-}
+};
 
-export default App;
- 
+export default Navbar;
