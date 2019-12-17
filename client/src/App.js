@@ -3,7 +3,7 @@ import List from "./component/List"
 import useDarkMode from './hooks/useDarkMode'
 import './App.css';
 
-const Navbar = () => {
+const App = () => {
   const [darkMode,setDarkMode]=useDarkMode(false)
   const toggleMode = e => {
     e.preventDefault();
@@ -20,4 +20,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default App;
